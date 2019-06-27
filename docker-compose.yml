@@ -1,0 +1,13 @@
+version: "3"
+services:
+  app:
+    ports:
+      - "80:80"
+    build: "./docker-files"
+    networks:
+      - frontend
+    volumes:
+      - "./front:/usr/share/nginx/html/public"
+networks:
+  frontend:
+    driver: overlay
